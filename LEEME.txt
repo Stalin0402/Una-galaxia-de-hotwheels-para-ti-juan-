@@ -1,0 +1,10 @@
+GALAXIA HOT WHEELS — JUAN ♥
+
+Archivos principales en una sola carpeta (sin subcarpeta carros).
+
+Los 30 Hot Wheels están como PNG con fondo transparente:
+hotwheels_01.png ... hotwheels_30.png
+
+El sitio usa directamente esos PNG para que se vean únicamente los carritos, sin los cuadros blancos/grises del fondo.
+
+Incluye la música de Kevin Kaarl y el código HTML/CSS/JS.

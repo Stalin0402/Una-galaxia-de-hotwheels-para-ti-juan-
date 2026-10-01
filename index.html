@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<!-- CAMBIAR AQUÍ el título de la pestaña -->
+<title>Para Juan, de Nicol ❤️ | Galaxia Hot Wheels</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Lienzo 3D -->
+  <canvas id="escena3d"></canvas>
+
+  <!-- Título luminoso -->
+  <header class="titulo-flotante">
+    <!-- CAMBIAR AQUÍ el título principal -->
+    <h1>Para Juan, de Nicol <span class="emoji-titulo">❤️🏎️</span></h1>
+    <p class="subtitulo">Toca un carrito para descubrir un mensaje ✨</p>
+  </header>
+
+  <!-- Pantalla de inicio: "Toca para iniciar" -->
+  <div class="inicio" id="inicio" role="button" tabindex="0" aria-label="Toca para iniciar">
+    <svg class="llama" viewBox="0 0 200 90" aria-hidden="true">
+      <defs>
+        <linearGradient id="gradLlama" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#ff2a1a"/>
+          <stop offset="0.55" stop-color="#ff8a00"/>
+          <stop offset="1" stop-color="#ffe14d"/>
+        </linearGradient>
+      </defs>
+      <path d="M8 62 C34 58 44 30 84 24 C104 21 118 32 132 22 C126 40 140 44 158 38 C150 52 168 56 192 50 C176 70 138 84 96 80 C58 78 30 76 8 62 Z" fill="url(#gradLlama)"/>
+      <path d="M30 60 C56 56 70 40 98 38 C90 48 104 54 124 50 C112 62 84 68 56 66 Z" fill="#0a0500" opacity="0.55"/>
+    </svg>
+
+    <!-- Llanta encendida para iniciar -->
+    <svg class="llanta-llamas" viewBox="0 0 140 140" aria-hidden="true">
+      <defs>
+        <linearGradient id="fuegoLlantaGrad" x1="0" y1="1" x2="1" y2="0">
+          <stop offset="0" stop-color="#ff2a1a"/>
+          <stop offset="0.55" stop-color="#ff8a00"/>
+          <stop offset="1" stop-color="#ffe14d"/>
+        </linearGradient>
+      </defs>
+      <g class="fuego-llanta">
+        <path d="M70 6 C58 22 60 30 49 39 C36 50 42 61 54 64 C42 78 49 91 63 94 C62 109 70 119 79 125 C79 108 91 102 96 91 C104 74 96 62 88 55 C96 39 87 24 76 17 C75 13 73 9 70 6Z" fill="url(#fuegoLlantaGrad)"/>
+      </g>
+      <circle cx="70" cy="70" r="47" fill="#080a0d" stroke="#22e5ff" stroke-width="5"/>
+      <circle cx="70" cy="70" r="29" fill="#14181c" stroke="#ff8a00" stroke-width="4"/>
+      <g stroke="#ffe14d" stroke-width="4" stroke-linecap="round">
+        <line x1="70" y1="45" x2="70" y2="95"/>
+        <line x1="45" y1="70" x2="95" y2="70"/>
+        <line x1="52" y1="52" x2="88" y2="88"/>
+        <line x1="88" y1="52" x2="52" y2="88"/>
+      </g>
+      <circle cx="70" cy="70" r="10" fill="#0a0d10" stroke="#22e5ff" stroke-width="3"/>
+    </svg>
+    <p class="toca">Toca para iniciar</p>
+  </div>
+
+  <!-- Tarjeta que aparece al tocar un carrito -->
+  <div class="capa-tarjeta oculto" id="capa-tarjeta">
+    <div class="tarjeta">
+      <button class="cerrar-tarjeta" id="cerrar-tarjeta" aria-label="Cerrar">×</button>
+      <h2 class="tarjeta-titulo">Para Juan, con cariño ❤️</h2>
+      <div class="tarjeta-carro"><img id="tarjeta-img" alt="Carrito"></div>
+      <p class="tarjeta-texto" id="tarjeta-texto"></p>
+    </div>
+  </div>
+
+  <!-- Controles -->
+  <div class="controles-flotantes">
+    <button class="btn-control" id="btn-audio" aria-label="Reproducir música">
+      <svg id="ic-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+      <svg id="ic-pausa" viewBox="0 0 24 24" class="oculto"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+    </button>
+    <button class="btn-control" id="btn-forma" aria-label="Cambiar la figura del centro" title="Cambiar la figura">✨</button>
+  </div>
+
+  <!-- Música de Juan -->
+  <audio id="audio-fondo" src="Kevin Kaarl - te quiero tanto (Video Oficial).mp3" loop preload="none"></audio>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
